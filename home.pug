@@ -1,0 +1,189 @@
+extends main 
+block content
+        .hero_area
+            .bg-box
+                img(src='/img/backgroud.png' alt='')
+            section.slider_section
+                #customCarousel1.carousel.slide(data-ride='carousel')
+                    .carousel-inner
+                        .carousel-item.active
+                            .container
+                                .row
+                                    .col-md-7.col-lg-6
+                                        .detail-box
+                                            h1
+                                                | Khóa học lập trình C++
+                                            p
+                                                | Đây là khóa học đầy đủ và chi tiết nhất bạn có thể tìm thấy trên internet!
+                                            .btn-box
+                                                a.btn1(href='/category')
+                                                    | Bắt Đầu Ngay
+                        .carousel-item
+                            .container
+                                .row
+                                    .col-md-7.col-lg-6
+                                        .detail-box
+                                            h1
+                                                | Khóa học lập trình
+                                            p
+                                                | Khóa học lập trình dnhf cho những người mới bắt đầu , những người mới tiếp cận , chuyển ngành , đơn giản dễ hiểu và hiệu quả
+                                            .btn-box
+                                                a.btn1(href='')
+                                                    | Bắt đàu ngay
+                        .carousel-item
+                            .container
+                                .row
+                                    .col-md-7.col-lg-6
+                                        .detail-box
+                                            h1
+                                                | Khóa học lập trình
+                                            p
+                                                | Khóa học lập trình dnhf cho những người mới bắt đầu , những người mới tiếp cận , chuyển ngành , đơn giản dễ hiểu và hiệu quả
+                                            .btn-box
+                                                a.btn1(href='')
+                                                    | Bắt đầu ngay
+                    .container
+                        ol.carousel-indicators
+                            li.active(data-target='#customCarousel1' data-slide-to='0')
+                            li(data-target='#customCarousel1' data-slide-to='1')
+                            li(data-target='#customCarousel1' data-slide-to='2')
+
+        section.offer_section.layout_padding-bottom
+            .offer_container
+                .container
+                    h1 Hot
+                    .row
+                        each Coures in coures
+                            .col-md-6
+                                
+                                    .box
+                                        .img-box
+                                            img(src=`${Coures.img}` alt='')
+                                        .detail-box
+                                            h5=Coures.name
+                                            h6
+                                                span=Coures.level
+                                            a(href='/category')
+                                                | Học Ngay
+                                            
+                        
+        section.food_section.layout_padding-bottom
+            .container
+                .heading_container.heading_center
+                    h2
+                        | Danh Sách Khóa Học
+                ul.filters_menu
+                        li.active(data-filter='*') All
+                        each Coures in coures
+                            li(data-filter='.burger')=Coures.name
+                            
+                .filters-content
+                    .row.grid
+                        each Coures in coures
+                            .col-sm-6.col-lg-4.all.pizza
+                                
+                                .box
+                                    div
+                                        .img-box
+                                            img(src=`${Coures.img}` alt='')
+                                        .detail-box
+                                            h5=Coures.name
+                                            p=Coures.mota
+                                            .options
+                                                a(href=`/coure-detail/${Coures.slug}`)
+                                                    | Xem Chi Tiết
+                                                a(href=`/Coures/${Coures.slug}`)
+                                                    | Learn Now
+                        
+                .btn-box
+                    a(href='/category')
+                        | View More
+
+
+        section.about_section.layout_padding
+            .container
+                .row
+                    .col-md-6
+                        .img-box
+                            img(src='/img/about_me.jpg' alt='')
+                    .col-md-6
+                        .detail-box
+                            .heading_container
+                                h2
+                                    | Về tôi
+                            p
+                                | There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                                | in some form, by injected humour, or randomised words which don't look even slightly believable. If you
+                                | are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
+                                | the middle of text. All
+                            a(href='/about')
+                                | Đọc Thêm
+
+
+        section.book_section.layout_padding
+            .container
+                .heading_container
+                    h2
+                        | Book A Table
+                .row
+                    .col-md-6
+                        .form_container
+                            form(action='')
+                                div
+                                    input.form-control(type='text' placeholder='Your Name')
+                                div
+                                    input.form-control(type='text' placeholder='Phone Number')
+                                div
+                                    input.form-control(type='email' placeholder='Your Email')
+                                div
+                                    select.form-control.nice-select.wide
+                                        option(value='' disabled='' selected='')
+                                            | How many persons?
+                                        option(value='')
+                                            | 2
+                                        option(value='')
+                                            | 3
+                                        option(value='')
+                                            | 4
+                                        option(value='')
+                                            | 5
+                                div
+                                    input.form-control(type='date')
+                                .btn_box
+                                    button
+                                        | Book Now
+                    .col-md-6
+                        .map_container
+                            #googleMap
+
+        section.client_section.layout_padding-bottom
+            .container
+                .heading_container.heading_center.psudo_white_primary.mb_45
+                    h2
+                        | Những Bình Luận Về Chúng Tôi
+                .carousel-wrap.row
+                    .owl-carousel.client_owl-carousel
+                        .item
+                            .box
+                                .detail-box
+                                    p
+                                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                                    h6
+                                        | Moana Michell
+                                    p
+                                        | magna aliqua
+                                .img-box
+                                    img.box-img(src='images/client1.jpg' alt='')
+                        .item
+                            .box
+                                .detail-box
+                                    p
+                                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                                    h6
+                                        | Mike Hamell
+                                    p
+                                        | magna aliqua
+                                .img-box
+                                    img.box-img(src='images/client2.jpg' alt='')
+
+
