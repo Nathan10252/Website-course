@@ -1,0 +1,18 @@
+extends main 
+block content 
+    form.top.form(method='POST' action='/coures/{{edit._id}}?_method=PUT')
+        .form-group
+            h1 Cập nhập Khóa Học
+            label(for='name') Tên Khóa Học
+            input#exampleInputEmail1.form-control(type='text' placeholder='nhập thông tin' name='{{edit.name}}' value='{{edit.name}}')
+            small#emailHelp.form-text.text-muted Hãy Nhập Thông Tin Chính Xác.
+        .form-group
+            label(for='mota') Mô Tả Khóa Học
+            input#exampleInputPassword1.form-control(type='text' placeholder='nhập thông tin' name='mota' value='{{edit.mota}}')
+        .form-group
+            label(for='video') Video ID
+            input#exampleInputPassword1.form-control(type='text' placeholder='video ID' name='video' value='{{edit.video}}')
+        .form-group
+            label(for='TrìnhĐộ') Trinh Độ
+            input#exampleInputPassword1.form-control(type='text' placeholder='Trình Độ' name='TrìnhĐộ' value='{{edit.level}}')
+        button.btn.btn-primary(type='submit') Submit
